@@ -1,0 +1,17 @@
+{
+    "manifest_version": 3,
+    "name": "Zabka - Automatyzacja Zamowien",
+    "version": "1.0",
+    "description": "Automatyczne obliczanie optymalnych zamowien w Cyberstore Zabka",
+    "permissions": ["storage"],
+    "host_permissions": ["https://cyberstore.zabka.pl/*"],
+    "content_scripts": [{
+          "matches": ["https://cyberstore.zabka.pl/market/my-orders*"],
+          "js": ["content.js"],
+          "run_at": "document_idle"
+    }],
+    "action": {
+          "default_popup": "popup.html",
+          "default_title": "Zabka Zamowienia"
+    }
+}
